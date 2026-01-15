@@ -66,7 +66,7 @@ const UpgradeModal = ({
           email: userEmail
         },
         theme: {
-          color: '#2563eb'
+          color: '#16a34a'
         }
       };
 
@@ -149,9 +149,9 @@ const UpgradeModal = ({
           </div>
 
           {/* Pricing */}
-          <div className="bg-blue-50 rounded-lg p-4 mb-6">
+          <div className="bg-primary-50 rounded-lg p-4 mb-6">
             <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600">₹99</div>
+              <div className="text-3xl font-bold text-primary-600">₹99</div>
               <div className="text-gray-600">per month</div>
               <div className="text-sm text-gray-500 mt-1">Cancel anytime</div>
             </div>
@@ -163,7 +163,7 @@ const UpgradeModal = ({
               <button
                 onClick={handleStartTrial}
                 disabled={loading}
-                className="w-full bg-green-600 hover:bg-green-700 disabled:bg-gray-400 text-white font-bold py-3 px-4 rounded-lg transition-colors"
+                className="w-full bg-primary-600 hover:bg-primary-700 disabled:bg-gray-400 text-white font-bold py-3 px-4 rounded-lg transition-colors"
               >
                 {loading ? 'Starting Trial...' : 'Start 7-Day Free Trial'}
               </button>
@@ -172,7 +172,7 @@ const UpgradeModal = ({
             <button
               onClick={handleUpgradeClick}
               disabled={loading}
-              className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white font-bold py-3 px-4 rounded-lg transition-colors"
+              className="w-full bg-primary-600 hover:bg-primary-700 disabled:bg-gray-400 text-white font-bold py-3 px-4 rounded-lg transition-colors"
             >
               {loading ? 'Processing...' : 'Upgrade to Premium'}
             </button>

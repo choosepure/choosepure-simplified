@@ -91,7 +91,7 @@ const DashboardPage = () => {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto"></div>
           <p className="mt-4 text-gray-600">Loading your dashboard...</p>
         </div>
       </div>
@@ -144,7 +144,7 @@ const DashboardPage = () => {
             ) : (
               <button
                 onClick={() => setShowUpgradeModal(true)}
-                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors"
+                className="bg-primary-600 hover:bg-primary-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors"
               >
                 Upgrade to Premium
               </button>
@@ -156,7 +156,7 @@ const DashboardPage = () => {
         <div className="grid md:grid-cols-4 gap-6 mb-8">
           <div className="bg-white rounded-lg p-6 shadow-md">
             <div className="flex items-center">
-              <div className="p-3 bg-blue-100 rounded-full">
+              <div className="p-3 bg-primary-100 rounded-full">
                 <span className="text-2xl">🗳️</span>
               </div>
               <div className="ml-4">
@@ -223,7 +223,7 @@ const DashboardPage = () => {
                   <div 
                     className={`h-2 rounded-full ${
                       limits.report_views.remaining === 0 ? 'bg-red-500' : 
-                      limits.report_views.remaining <= 1 ? 'bg-yellow-500' : 'bg-blue-500'
+                      limits.report_views.remaining <= 1 ? 'bg-secondary-500' : 'bg-primary-500'
                     }`}
                     style={{ width: `${(limits.report_views.used / limits.report_views.limit) * 100}%` }}
                   ></div>
@@ -242,7 +242,7 @@ const DashboardPage = () => {
                   <div 
                     className={`h-2 rounded-full ${
                       limits.votes.remaining === 0 ? 'bg-red-500' : 
-                      limits.votes.remaining <= 1 ? 'bg-yellow-500' : 'bg-blue-500'
+                      limits.votes.remaining <= 1 ? 'bg-secondary-500' : 'bg-primary-500'
                     }`}
                     style={{ width: `${(limits.votes.used / limits.votes.limit) * 100}%` }}
                   ></div>
@@ -257,7 +257,7 @@ const DashboardPage = () => {
                 </p>
                 <button
                   onClick={() => setShowUpgradeModal(true)}
-                  className="mt-2 bg-yellow-600 hover:bg-yellow-700 text-white font-semibold py-2 px-4 rounded-md transition-colors"
+                  className="mt-2 bg-secondary-600 hover:bg-secondary-700 text-white font-semibold py-2 px-4 rounded-md transition-colors"
                 >
                   Upgrade Now
                 </button>
@@ -273,7 +273,7 @@ const DashboardPage = () => {
               <h2 className="text-xl font-semibold text-gray-900">Your Votes</h2>
               <button
                 onClick={handleVoteMore}
-                className="text-blue-600 hover:text-blue-700 font-medium text-sm"
+                className="text-primary-600 hover:text-primary-700 font-medium text-sm"
               >
                 Vote More →
               </button>
@@ -309,7 +309,7 @@ const DashboardPage = () => {
                 <p className="text-gray-600 mb-4">You haven't voted yet</p>
                 <button
                   onClick={handleVoteMore}
-                  className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition-colors"
+                  className="bg-primary-600 hover:bg-primary-700 text-white font-semibold py-2 px-4 rounded-md transition-colors"
                 >
                   Cast Your First Vote
                 </button>
@@ -323,7 +323,7 @@ const DashboardPage = () => {
               <h2 className="text-xl font-semibold text-gray-900">Community Activity</h2>
               <button
                 onClick={handleViewReports}
-                className="text-blue-600 hover:text-blue-700 font-medium text-sm"
+                className="text-primary-600 hover:text-primary-700 font-medium text-sm"
               >
                 View All Reports →
               </button>
@@ -332,7 +332,7 @@ const DashboardPage = () => {
             <div className="space-y-3">
               {recent_activity.map((activity, index) => (
                 <div key={index} className="flex items-start space-x-3">
-                  <div className="p-2 bg-blue-100 rounded-full">
+                  <div className="p-2 bg-primary-100 rounded-full">
                     <span className="text-sm">
                       {activity.type === 'test_completed' ? '🧪' : '📊'}
                     </span>
@@ -351,15 +351,15 @@ const DashboardPage = () => {
 
         {/* Profile Completion Prompt */}
         {!user_info.name && (
-          <div className="mt-8 bg-blue-50 border border-blue-200 rounded-lg p-6">
+          <div className="mt-8 bg-primary-50 border border-primary-200 rounded-lg p-6">
             <div className="flex items-center justify-between">
               <div>
-                <h3 className="font-semibold text-blue-900">Complete Your Profile</h3>
-                <p className="text-blue-700">Add your name and get personalized recommendations</p>
+                <h3 className="font-semibold text-primary-900">Complete Your Profile</h3>
+                <p className="text-primary-700">Add your name and get personalized recommendations</p>
               </div>
               <button
                 onClick={handleCompleteProfile}
-                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition-colors"
+                className="bg-primary-600 hover:bg-primary-700 text-white font-semibold py-2 px-4 rounded-md transition-colors"
               >
                 Complete Profile
               </button>
