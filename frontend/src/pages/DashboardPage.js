@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { userAPI, subscriptionAPI, trackUserAction } from '../services/api';
 import UpgradeModal from '../components/UpgradeModal';
@@ -27,7 +27,7 @@ const DashboardPage = () => {
     setEmail(userEmail);
     loadDashboardData(userEmail);
     trackUserAction(userEmail, 'view_dashboard');
-  }, [searchParams, navigate]);
+  }, [searchParams, navigate]); // Removed loadDashboardData from dependencies
 
   const loadDashboardData = async (userEmail) => {
     try {

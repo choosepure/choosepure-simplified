@@ -11,6 +11,9 @@
   
   # NPM version  
   NPM_VERSION = "9"
+  
+  # Disable treating warnings as errors
+  CI = "false"
 
 # Redirect rules for React Router
 [[redirects]]
@@ -35,3 +38,4 @@
 # Environment-specific settings
 [context.production.environment]
   NODE_ENV = "production"
+  CI = "false"

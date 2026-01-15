@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { sampleAPI, votingAPI, userAPI, trackUserAction } from '../services/api';
 
@@ -8,7 +8,7 @@ const HomePage = () => {
   const [votingOptions, setVotingOptions] = useState([]);
   const [communityStats, setCommunityStats] = useState({});
   const [loading, setLoading] = useState(true);
-  const [currentStep, setCurrentStep] = useState(1); // Track user progress
+  // Removed unused currentStep state
 
   useEffect(() => {
     loadHomepageData();
@@ -34,21 +34,18 @@ const HomePage = () => {
   };
 
   const handleViewSampleReports = () => {
-    setCurrentStep(2);
     trackUserAction(null, 'view_sample_reports');
     // Scroll to sample reports section
     document.getElementById('sample-reports').scrollIntoView({ behavior: 'smooth' });
   };
 
   const handleLearnMore = () => {
-    setCurrentStep(3);
     trackUserAction(null, 'view_how_it_works');
     // Scroll to how it works section
     document.getElementById('how-it-works').scrollIntoView({ behavior: 'smooth' });
   };
 
   const handleVoteClick = () => {
-    setCurrentStep(4);
     trackUserAction(null, 'initiate_voting');
     navigate('/vote');
   };

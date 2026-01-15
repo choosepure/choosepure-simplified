@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { subscriptionAPI, trackUserAction } from '../services/api';
 
 const UpgradeModal = ({ 
@@ -10,7 +10,6 @@ const UpgradeModal = ({
   upgradePrompts = [] 
 }) => {
   const [loading, setLoading] = useState(false);
-  const [selectedTier, setSelectedTier] = useState('premium');
 
   if (!isOpen) return null;
 
@@ -32,7 +31,7 @@ const UpgradeModal = ({
       // Create payment order
       const orderResponse = await subscriptionAPI.createPaymentOrder({
         email: userEmail,
-        tier_id: selectedTier
+        tier_id: 'premium' // Using fixed tier instead of selectedTier
       });
 
       const { order_id, amount, currency, razorpay_key } = orderResponse.data.data;
