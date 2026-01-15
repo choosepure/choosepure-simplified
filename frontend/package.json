@@ -3,6 +3,7 @@
   "version": "2.0.0",
   "description": "Simplified user flow for ChoosePure platform",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
@@ -18,7 +19,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build:analyze": "npm run build && npx serve -s build",
+    "netlify:build": "npm run build"
   },
   "eslintConfig": {
     "extends": [
