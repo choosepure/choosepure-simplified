@@ -222,4 +222,10 @@ async def seed_sample_data():
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8001)
+    import os
+    
+    # Get port from environment variable (for production deployment)
+    port = int(os.environ.get("PORT", 8001))
+    
+    # Run the server
+    uvicorn.run(app, host="0.0.0.0", port=port)
